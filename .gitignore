@@ -1,0 +1,6 @@
+.idea
+node_modules
+.git
+package-lock.json
+reactive-forms/package-lock.json
+.gitignore
