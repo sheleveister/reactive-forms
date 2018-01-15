@@ -6,7 +6,7 @@ import { ProductDeleteComponent } from './products/product-delete/product-delete
 export const routes: Routes = [
   { path: '', redirectTo: 'products', pathMatch: 'full' },
   { path: 'products', component: ProductListComponent },
-  { path: 'priducts/edit/:id', component: ProductCreateEditComponent },
+  { path: 'products/edit/:id', component: ProductCreateEditComponent },
   { path: 'products/create', component: ProductCreateEditComponent },
-  { path: 'products/delete', component: ProductDeleteComponent },
+  { path: 'products/delete/:id', component: ProductDeleteComponent },
 ];

@@ -1,3 +1,44 @@
-<p>
-  product-list works!
-</p>
+<h1> {{ title }} </h1>
+
+<div *ngIf="errorMessage" class="alert alert-danger">
+  {{ errorMessage }}
+</div>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Name</th>
+      <th>Price</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let product of products; let i = index">
+      <td>{{ i + 1 }}</td>
+      <td>{{ product.name }}</td>
+      <td>{{ product.price }}</td>
+      <td>
+        <button class="btn btn-success"
+          (click)="editProduct(product)">
+          Edit Product
+        </button>
+
+        <button class="btn btn-danger"
+          (click)="deleteProduct(product)">
+          Delete
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<div>
+  <button class="btn btn-primary" (click)="createProduct()">
+    Create product
+  </button>
+
+  <button class="btn btn-default" (click)="refreshList()">
+    Refresh
+  </button>
+</div>
