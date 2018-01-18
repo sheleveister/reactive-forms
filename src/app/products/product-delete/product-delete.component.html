@@ -1,3 +1,14 @@
-<p>
-  product-delete works!
-</p>
+<div class="container">
+  <div *ngIf="errorMessage" class="alert alert-danger">
+    {{ errorMessage }}
+  </div>
+
+  <div>
+    <h3> You want to remove this product: </h3>
+    <p> Name: {{ currentProduct?.name }} </p>
+    <p> Price: {{ currentProduct?.price }} </p>
+
+    <button class="btn btn-default" (click)="goBack()">Cancel</button>
+    <button class="btn btn-danger" (click)="deleteProduct()">Delete</button>
+  </div>
+</div>
